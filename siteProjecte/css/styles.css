@@ -1,0 +1,278 @@
+/* -------------------------------- Contingut genèric a totes les pàg. ------------------------------------- */
+
+:root {
+    --main-color: rgb(24, 24, 24);
+    --second-color: rgb(112, 112, 112);
+    --gris-clar: rgb(247, 246, 242);
+    --blau-verd: rgb(54, 159, 167);
+}
+
+html {
+    color: var(--main-color);
+    font-size: 18px;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'Averia Sans Libre', cursive;
+    background-color: var(--gris-clar);
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body { 
+    width: 100%;
+    margin: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%23fdf265' fill-opacity='0.22'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-color: #f6f6f6;  /* Per si falla el pattern de fons */
+}
+    
+
+.sr {   /* L'utilitzo per amagar de pantalla allò que sí que vull, per temes d'accessibilitat, que llegeixi el lector. 
+           Útil sobretot per a icones <i> amb contingut semàntic */
+    position:absolute;
+    height:1px;    
+    width:1px;    
+    overflow:hidden;    
+    clip:rect(1px, 1px, 1px, 1px);
+}
+
+/*Enllaços*/
+
+a {
+    text-decoration: none;
+    color: var(--second-color);
+}
+
+a:link {
+    color: var(--main-color);
+}
+
+a:visited {
+    color: var(--second-color);
+}
+
+a:hover {
+    color: var(--blau-verd);
+}
+
+a:active {
+    color: black;
+    text-decoration: 1px solid black;
+}
+
+
+ul li {   /* Estil compartit per a tots els elements de llista */
+    list-style: none;   
+}
+
+.icons {
+    margin: 1rem 1.5rem;
+    font-size: 1.2rem;
+}
+
+/* ------------------------------------  index.html ---------------------------------------------- */
+
+/* Capçalera+logo */
+#header{    
+    height: 200px;
+}
+
+.logotip{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logotip h1{
+     font-size: 3rem;
+}
+
+.logotip img {
+    height: 3rem;
+    width: 3rem;
+}
+
+/* Menú horitzontal */
+
+nav ul {
+    display: inline-flex;
+}
+
+nav ul li {
+    padding: 1rem 3rem 1rem 3rem;
+}
+
+nav ul li.active a{
+    font-weight: bold;
+    color: var(--blau-verd);
+}
+
+/* Icones search, user, shop*/
+.user_icons {
+    position: absolute;
+    top: 40px;
+    right: 80px;
+}
+
+.user_icons ul {
+    display: inline-flex;
+}
+
+/* Imatge plats + text */
+.banner {
+    height: 30rem;
+    background-image: url(../img/plats.jpg);
+    background-color: var(--blau-verd); /* per si falla la imatge de fons */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.box {
+    padding: 2.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+}
+
+/* Icona per pujar pàgina*/
+
+#up i {
+    position: fixed;
+    top: 92%;
+    right: 1%;
+
+}
+/* Enllaços a productes */
+.elements {
+    display: flex;
+    justify-content: center;
+    background-image: url(../img/estovalles.jpeg);
+    background-color: var(--second-color); /* per si falla la imatge de fons */
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 5rem;
+    height: 38rem;
+}
+
+.elements img {
+    height: 14rem;
+    width: 14rem;
+    margin: 1rem 2rem 0 2rem;
+}
+
+.groupB p {
+    padding-top: 2.5rem;
+}
+
+.nansa {
+    margin-right: 1.5rem;
+}
+
+/*  Enllaç a imatges IG */
+.idea {
+    margin-bottom: 8rem;
+}
+
+.idea i {
+    display: block;
+    font-size: 10rem;
+    margin-top: -14rem;
+    margin-bottom: 3rem;
+}
+
+.idea a.button_idea {
+    border-radius: 2rem;
+    background-color: var(--main-color);
+    color: var(--gris-clar);
+    padding: 2rem 3rem;
+    font-size: 1.2rem;
+}
+
+.idea a.icon_idea:hover {
+    color: rgb(226, 204, 7);
+}
+
+/* Slider opinions */
+
+.slider {
+    width: 50%;
+    margin: auto;
+    display: flex;
+}
+
+.slider ul {
+    display: flex;
+    padding: 0 2rem;
+}
+
+/* Newsletter */
+.newsletter {
+    background-image: url(../img/estovallesBlau.jpg);
+    background-color: var(--blau-verd); /* per si falla la imatge de fons */
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 5rem;
+    height: 18rem;
+    padding: 2rem 5rem;
+}
+
+.dades_newsletter {
+    margin-top: 3rem;
+}
+
+form label {
+    display: none; /* amaguem les etiquetes que hi seran però per a l'accessibilitat */
+}
+
+form input {
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.2rem;
+    background-color: var(--gris-clar);
+    font-family: 'Averia Sans Libre', cursive; /* Cal eliminar característiques de font per defecte a input */
+    font-size: 0.8rem;
+    color: var(--main-color);
+    padding: 0.2rem;
+    margin: 0 0.5rem;
+    outline-color: var(--blau-verd);
+}
+
+form button {
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.2rem;
+    background-color: var(--second-color);
+    color: var(--gris-clar);
+    font-weight: bold;
+    font-size: 1.02rem;
+    font-family: 'Averia Sans Libre', cursive; /* Eliminem característiques de button per defecte */
+}
+
+form button:hover {
+    background-color: var(--blau-verd);
+    color: var(--main-color);
+}
+
+/* Footer */
+footer {
+    display: flex;
+}
+
+footer div {
+    margin: 2rem 3rem;
+    text-align: left;
+}
+
+footer h3 {
+    font-size: 1rem;
+}
+
+.contact li ul {
+    display: inline-flex;
+    padding: 0;
+}
+
+.contact li ul li {
+    position: relative;
+    margin-left: -0.2rem;
+}

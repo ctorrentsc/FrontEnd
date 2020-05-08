@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ca">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> bysheiA Homepage </title>
+    <meta name="author" content="Clara Torrents Canals"/>
+    <meta name="description" content="Pàgina principal de baysheiA, la web de plats, bols, tasses i safates per a les vaixelles més anàrquiques del mercat."/>
+    <!-- icona de pestanya -->
+    <link rel="shortcut icon" href="img/AnarchySymbol2.png" type="image/png" />
+    <!-- enllaç de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Kit per a icones Fontawesom -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+
+<body>
+    
+    <a class="sr" href="#main">Salteu al contingut principal</a> <!-- Salt a contingut de la pàg (Accessibilitat)-->
+    
+    <header id="header">
+        <div class="user_icons">
+            <ul>
+                <li class="icons"><a href="#" class="fas fa-search" title="fer una cerca"></a></li>                 
+                <li class="icons"><a href="#" class="far fa-user" title="registre/login"></a></li> 
+                <li class="icons"><a href="#" class="fas fa-shopping-basket" title="veure cistella de compra"></a></li>  
+            </ul>     
+           
+        </div>
+
+        <div class="logotip" id="logo">
+            <h1>byshei</h1>
+            <a href="index.html"><img src="img/AnarchySymbol2.png" alt="A d'anarquia"></a>
+         </div>
+
+        <nav id="menu">
+            <ul>
+                <li class="active"><a href="index.html">HOME</a> </li>
+                <li><a href="#">BOTIGA</a></li>
+                <li><a href="#">NOSALTRES</a></li>
+                <li><a href="#">FAQS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">         
+        <section>
+            <div class="banner">
+                <div class="box">
+                    <h2>NO TOTHOM QUI COMPARTEIX TAULA ÉS IGUAL,<br>
+                    HA DE SER-HO LA TEVA VAIXELLA?<br><br>
+                    ANARQUÍTZA-LA!</h2>
+                </div>        
+            </div>
+
+            <div id="up">
+                <a href="#logo"><i class="fas fa-chevron-up"></i></a> <span class="sr">icona pujar pantalla</span>
+            </div>
+        </section>
+
+            <div class="elements">
+                <div class="group">
+                    <a href="#"><h2>PLATS</h2>
+                    <img src="img/plat.png" title="Veure col·lecció plats" alt="Icona plat"></a>
+                </div>
+                <div class="groupB">
+                    <a href="#"><h2 class="special">BOLS</h2>
+                    <img src="img/bol.png" title="Veure col·lecció bols" alt="Icona bol"></a>
+                </div>
+                <div class="group">
+                    <a href="#"><h2 class="nansa">TASSES</h2>
+                    <img src="img/tassa.png" title="Veure col·lecció tasses" alt="Icona tassa"></a>
+                </div>
+                <div class="groupB">
+                    <a href="#"><h2 class="special">SAFATES</h2>
+                    <img src="img/safata.png" title="Veure col·lecció safates" alt="Icona safata"></a>
+                </div>
+            </div>
+
+            <div class="idea">
+                <a class="icon_idea" href="#"><i class="far fa-lightbulb"></i></a> <span class="sr">icona bombeta</span>
+                <a  class="button_idea" href="#">Inspira't en d'altres creacions</a>
+            </div>
+        </section>
+
+        <section>
+            <div class="logotip">
+                <img src="img/AnarchySymbol2.png" alt="A d'anarquia">
+                <h2>ixò diuen de nosaltres</h2>    
+            </div>
+
+            <div class="slider">
+                <a href="#" class="fas fa-angle-left" title="icona desplaçar esquerre"></a> 
+                <ul>
+                    <li>
+                        <p>"Ara a casa cadascú sap quin és el seu plat, tassa, bol... tenim una vaixella que ens defineix i ens encanta!"</p><br>
+                        <p class="lateral">Joana / bysheiA Ploramicos</p>
+                    </li>
+               <!-- <li>
+                        <p>"Una manera fàcil i divertida d'omplir els armaris de la cuina. Hem trobat opcions per tots, fins i tot un bol increïble per al gos"</p><br>
+                        <p class="lateral">Isaac / bysheiA ArgemiPiferrer</p>
+                    </li>
+                    <li>
+                        <p>"Ens va costar trencar la norma però tots els plats i bols, encaa que diferents, són apilables! Repetirem segur."</p><br>
+                        <p class="lateral">Griselda / bysheiA EstiuGarcies</p>
+                    </li>
+                    <li>
+                        <p>"Amb aquests plats els nens i tot paren taula, els encanta saber de qui és cada plat."</p><br>
+                        <p class="lateral">Oriol / bysheiA Bombers del Tirol</p>
+                    </li> 
+
+                aquestes opinions aniran en un slider automàtic-->
+                </ul>
+                <a href="#" class="fas fa-angle-right" title="icona desplaçament dreta"></a>
+            </div> 
+            
+            <div class="newsletter">
+                <p>Vols conèixer totes les novetats de primera mà i rebre curiositats i consells útils?<br>
+                A baysheiA recollim els continguts més interessants i pràctics i te'ls fem arribar un cop al mes, quan encara són calents.</p><br>
+                <p>Volem vaixelles anàrquiques però no fer del teu correu un caos!</p>
+
+                <div class="dades_newsletter">
+                    <form action="#" method="post" autocomplete="off">
+
+                        <label for="name">Nom i Cognoms</label>
+                        <input type="text" id="name" name="user_name" maxlength="20" required placeholder="Nom i Cognoms"/>
+
+                        <label for="email">Correu electrònic</label>
+                        <input type="email" id="email" name="user_email" required placeholder="Correu electrònic"/>
+                    
+                        <button type="submit">SUBSCRIU-ME</button>
+
+                    </form>
+                </div>            
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="legal">
+            <h3>Informació important:</h3>
+            <ul>
+            <li><a href="#">ENVIAMENTS</a></li>
+            <li><a href="#">CANVIS I DEVOLUCIONS</a></li>
+            <li><a href="#">TERMES I CONDICIONS</a></li>
+            </ul>
+
+        </div>
+
+        <div class="contact">
+            <h3>Contacte:</h3>
+            <ul>
+                <li><a href="mailto:hola@bysheia.com?subject=M'ajudeu?&body=Hola bysheiA,">hola@bysheia.com</a></li>
+                <li>
+                    <ul>
+                        <li class="icons" ><a href="#" class="fab fa-instagram" title="Instagram"></a></li>
+                        <li class="icons" ><a href="#" class="fab fa-twitter" title="Twitter"></a></li>
+                        <li class="icons" ><a href="#" class="fab fa-facebook-square" title="Facebook"></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
