@@ -1,18 +1,47 @@
 /* -------------------------------- Contingut genèric a totes les pàg. ------------------------------------- */
 
+/* Poso les fonts amb @font-face per optimitzar la velocitat de càrrega que es veia reduida amb l'url de GoogleFonts */
+
+@font-face {
+    font-family:"AveriaSansLibre";
+    src: url("../fonts/AveriaSansLibre-Regular.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/AveriaSansLibre-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url("../fonts/AveriaSansLibre-Regular.svg") format("svg"), /* Legacy iOS */
+      url("../fonts/AveriaSansLibre-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+      url("../fonts/AveriaSansLibre-Regular.woff") format("woff"), /* Modern Browsers */
+      url("../fonts/AveriaSansLibre-Regular.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family:  "AveriaSansLibre-Bold";
+    src: url("../fonts/AveriaSansLibre-Bold.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/AveriaSansLibre-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+      url("../fonts/AveriaSansLibre-Bold.svg") format("svg"), /* Legacy iOS */
+      url("../fonts/AveriaSansLibre-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
+      url("../fonts/AveriaSansLibre-Bold.woff") format("woff"), /* Modern Browsers */
+      url("../fonts/AveriaSansLibre-Bold.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: bold;
+    font-style: normal;
+  }
+
+
+
 :root {
     --main-color: rgb(24, 24, 24);
     --second-color: rgb(112, 112, 112);
     --gris-clar: rgb(247, 246, 242);
     --blau-verd: rgb(54, 159, 167);
+    --banana: rgb(226, 204, 7);
 }
 
 html {
-    color: var(--main-color);
+    font-family: "AveriaSansLibre";
     font-size: 18px;
+    color: var(--main-color);
     box-sizing: border-box;
-    text-align: center;
-    font-family: 'Averia Sans Libre', cursive;
+    text-align: center;    
     background-color: var(--gris-clar);
 }
 
@@ -123,7 +152,6 @@ nav ul li.active a{
 .banner {
     height: 30rem;
     background-image: url(../img/plats.jpg);
-    background-color: var(--blau-verd); /* per si falla la imatge de fons */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -145,13 +173,17 @@ nav ul li.active a{
 /* Enllaços a productes */
 .elements {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     background-image: url(../img/estovalles.jpeg);
-    background-color: var(--second-color); /* per si falla la imatge de fons */
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 5rem;
     height: 38rem;
+}
+
+.elements div {
+    flex: 25%;
 }
 
 .elements img {
@@ -160,7 +192,11 @@ nav ul li.active a{
     margin: 1rem 2rem 0 2rem;
 }
 
-.groupB p {
+.elements img:hover {
+    border:20px solid transparent; /* efecte img s'encongeix */
+}
+
+.group p {
     padding-top: 2.5rem;
 }
 
@@ -175,6 +211,7 @@ nav ul li.active a{
 
 .idea i {
     display: block;
+    width: 100%;
     font-size: 10rem;
     margin-top: -14rem;
     margin-bottom: 3rem;
@@ -189,7 +226,7 @@ nav ul li.active a{
 }
 
 .idea a.icon_idea:hover {
-    color: rgb(226, 204, 7);
+    color: var(--banana);
 }
 
 /* Slider opinions */
@@ -208,7 +245,6 @@ nav ul li.active a{
 /* Newsletter */
 .newsletter {
     background-image: url(../img/estovallesBlau.jpg);
-    background-color: var(--blau-verd); /* per si falla la imatge de fons */
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 5rem;
@@ -229,7 +265,7 @@ form input {
     height: 2.5rem;
     border-radius: 0.2rem;
     background-color: var(--gris-clar);
-    font-family: 'Averia Sans Libre', cursive; /* Cal eliminar característiques de font per defecte a input */
+    font-family: 'AveriaSansLibre'; /* Cal eliminar característiques de font per defecte a input */
     font-size: 0.8rem;
     color: var(--main-color);
     padding: 0.2rem;
@@ -245,7 +281,7 @@ form button {
     color: var(--gris-clar);
     font-weight: bold;
     font-size: 1.02rem;
-    font-family: 'Averia Sans Libre', cursive; /* Eliminem característiques de button per defecte */
+    font-family: 'AveriaSansLibre'; /* Eliminem característiques de button per defecte */
 }
 
 form button:hover {
@@ -276,3 +312,87 @@ footer h3 {
     position: relative;
     margin-left: -0.2rem;
 }
+
+/* ------------------------------------  botiga.html ---------------------------------------------- */
+
+/* Marge sotaMenú horitzontal */
+
+hr {
+    border-top: 15px solid rgb(146, 123, 92);
+    border-image: linear-gradient(to bottom, rgb(146, 123, 92), var(--gris-clar)) 100% 0 0 0;
+    border-right: 0px;
+    border-left: 0px; /* borders laterals a 0 per eliminar espai en blanc als marges*/
+    opacity: 0.2;
+    margin: 0;
+}
+/* Fil d'Ariadna */
+.breadcrumb {
+    position: absolute;
+    top: 240px;
+    left:20px;
+    display: flex;
+    list-style: none;
+}
+
+.breadcrumb li {
+    margin-right: 1rem;
+}
+
+/* Contenidor 4 tipus producte */
+
+.elements_2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.elements_2 div {
+    flex: 50%;
+    padding: 3rem;
+}
+
+.big_imgA {
+    background-color: #f6f5f7; 
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2378f60f' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.big_imgB {
+    background-color: #f6f5f7;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f79108' fill-opacity='0.72' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.big_imgC {
+    background-color: #f6f5f7;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f4a9f6' fill-opacity='0.72' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.big_imgD {
+    background-color: #f6f5f7;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235fc7f6' fill-opacity='0.72' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* bora tipus producte :hover */
+
+.elements_2 div:hover{
+    background-color: #fcfaff;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='1' viewBox='0 0 40 1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v1H0z' fill='%23fbde05' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+
+
+/* contenidor valors */
+
+.valors {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.valors h2 {
+    text-align: left;
+    text-transform: uppercase;
+    padding-top: 2rem;
+}
+
+.valors p {
+    text-align: justify;
+}
+
