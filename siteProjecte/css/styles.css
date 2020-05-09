@@ -171,6 +171,7 @@ nav ul li.active a{
 
 }
 /* Enllaços a productes */
+
 .elements {
     display: flex;
     flex-wrap: wrap;
@@ -179,7 +180,7 @@ nav ul li.active a{
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 5rem;
-    height: 38rem;
+    height: 35rem;
 }
 
 .elements div {
