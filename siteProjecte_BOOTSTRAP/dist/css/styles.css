@@ -1,0 +1,311 @@
+/* -------------------------------- Contingut genèric a totes les pàg. ------------------------------------- */
+
+:root {
+  --main-color: rgb(24, 24, 24);
+  --second-color: rgb(112, 112, 112);
+  --gris-clar: rgb(247, 246, 242);
+  --blau-verd: rgb(54, 159, 167);
+  --banana: rgb(226, 204, 7);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {  
+    margin: 0 auto; /* Font-family Averia Sans Libre (aplicada al css de Bootstrap directament) */
+    padding: 0;  
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%23fdf265' fill-opacity='0.22'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* genèric enllaços */
+a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+a:hover {
+  color: var(--blau-verd);
+  text-decoration: none;
+}
+
+.fas:hover , .far:hover {
+  color: var(--blau-verd);
+}
+
+a img:hover {
+  color: var(--blau-verd);
+}
+
+/* genèric per a h1 de totes les pàgines */
+.superTitol {
+  position: relative;
+  top: -2.5rem;
+}
+
+/* Icona per pujar pàgina*/
+
+#up i {
+  position: fixed;
+  z-index: 60; 
+  top: 92%;
+  right: 1.5%;
+}
+
+.fAriadna {   /* Posem el fil d'Ariadna, a les pàgines on correspon, per damunt la resta d'elements posicionats*/
+  position: relative;
+  z-index: 100;
+  margin-left: -1rem;
+}
+
+.getup {
+  position: relative;
+  z-index: 6;
+  margin-top: -5rem;
+}
+
+/* -------------------------------- index.html ------------------------------------- */
+
+/* Estil paràgrafs text overlay */
+
+.pgf1 {
+  color:rgba(66, 66, 66, 0.5);
+  text-shadow: 0 1px rgba(184, 182, 182, 0.5); 
+  letter-spacing: 0.1em;
+}
+
+.pgf2 {
+  color:rgba(66, 66, 66, 0.7);
+}
+
+.pgf3 {
+  font-size: 1.4em;
+  letter-spacing: 0.3em; 
+  color:rgba(66, 66, 66, 0.85)
+}
+
+/* secció 4 icones */
+.bg-special {
+  background-image: url(../../img/estovalles3.jpeg); /* background icones grans */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.smaller img:hover {
+    border:20px solid transparent; /* efecte img de contenidor icones grans s'encongeixen en hover */
+}
+
+/* contenidor bombeta */
+.idea {
+  position: relative;
+  z-index: 4;
+  margin-bottom: 2rem;
+}
+
+.idea i {
+  font-size: 10rem;
+  margin-top: -3rem;
+}
+
+.idea i:hover {
+  color: var(--banana);
+}
+
+.button_idea a {
+  border-radius: 2rem;
+  padding: 2rem 3rem;
+  font-size: 1.5rem;
+}
+
+.inicial {  /* img-inicial títol carrousel opinions */
+    height: 3rem;
+    width: 3rem;
+}
+
+/* secció newsletter*/
+.newsletter {
+    background-image: url(../../img/estovallesBlau.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.newsletter_form input:focus { 
+  border-color: transparent;
+  box-shadow: 0 0 0 0.2rem var(--blau-verd);/*canvia l'ombrejat blau per defecte, en posar el focus*/
+  outline: none;
+} 
+
+.newsletter_form input {
+  width: 20rem;
+  height: 2.5rem;
+}
+
+.newsletter_form button:hover {
+    background-color: var(--blau-verd);
+    color: var(--main-color);
+}
+
+
+/* ------------------------------------  botiga.html ---------------------------------------------- */
+
+/* Fons imatges grans */
+.big_imgA {
+  background-color: #f6f5f7; 
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2378f60f' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.big_imgB {
+  background-color: #f6f5f7;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f79108' fill-opacity='0.72' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.big_imgC {
+  background-color: #f6f5f7;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f4a9f6' fill-opacity='0.72' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.big_imgD {
+  background-color: #f6f5f7;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235fc7f6' fill-opacity='0.72' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* pattern on hover imatges grans*/
+.coleccions div:hover {
+  background-color: #fcfaff;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='1' viewBox='0 0 40 1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v1H0z' fill='%23fbde05' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* ------------------------------------  registre.html ---------------------------------------------- */
+
+/* background secció formulari */
+.seccio_form {
+  background-color:transparent;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffd177' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* aside + contingut */
+aside {
+  height: 30rem;
+  padding-top: 30px;
+}
+
+.aside_card {
+  box-shadow: 0 0 0 0.2rem var(--second-color);
+  background-color: rgba(155, 218, 223, 0.4);
+}
+
+.registre_avantatges li {
+  margin-left: -1.5rem;
+}
+
+.img-escalaIcon {
+  margin: 1rem 1.5rem;
+  width: 2rem;  
+}
+
+.hover_card:hover {
+  color: orange;
+  font-size: 1.1rem;
+}
+
+/* Icona més botó login */
+.user_login {
+  font-size: 10rem;
+}
+
+.btn_login:hover {
+  background-color: var(--blau-verd);
+}
+
+/* estils formulari */
+.form_login input {
+  padding: 1rem;
+  border-radius: 0.2rem;
+  height: 1.8rem;
+}
+
+.form_login input:focus { 
+  border-color: transparent;
+  box-shadow: 0 0 0 0.2rem var(--blau-verd);/*canvia l'ombrejat blau per defecte, en posar el focus*/
+  outline: none;
+} 
+
+.form_login input[type=password], .countryFlex input, .countryFlex select {
+  width: 200px;
+}
+
+.countryFlex2 input {
+  width: 300px;
+}
+
+/* ------------------------------------  media queries ---------------------------------------------- */ 
+
+/* Extra small devices (portrait phones, less than 576px)
+ No media query since this is the default in Bootstrap */
+
+ /* xs */
+ @media (max-width: 576px) {   
+  html {
+    font-size: 0.8rem;
+  }
+  .img-logo {
+    width: 35px;  /* img-fluid no responia en la imatge del logo, aplico mides segons dispositiu */
+  }
+  .img-escala {  /* imatges que tot i ser img-fluid en dispositius petits es veuen massa grans si ocupen el total del contenidor*/
+    width: 250px;
+  }
+
+  .pgf1 {   /* text overlay pàg index.html*/
+    font-size: 1.5rem;
+  }
+  .img_escala2 {
+    width: 400px; /* icones grans pàg botig.html, en mida petita, evitem que quedi enorme */
+  }
+
+ }
+
+/* sm */
+@media (min-width: 576px) { 
+ 
+  .img-logo {
+    width: 45px;
+  }
+
+  .img-escala {
+    width: 280px;
+  }
+
+  .pgf1 {
+    font-size: 1.7rem;
+  }
+
+}
+
+/* md */
+@media (min-width: 768px) { 
+
+  html {
+    font-size: 1rem;
+  }
+
+  .img-logo {
+    width: 65px;
+  }
+
+  .pgf1 {
+    font-size: 2rem;
+  }
+}
+
+/* lg */
+@media (min-width: 992px) { 
+ 
+}
+
+
+
+
+
