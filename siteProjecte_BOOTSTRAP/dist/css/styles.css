@@ -241,6 +241,11 @@ aside {
   width: 300px;
 }
 
+.gh {
+  position: absolute;
+  bottom: 0.2px;  /* aliniem caixa check amb text */
+}
+
 /* ------------------------------------  media queries ---------------------------------------------- */ 
 
 /* Extra small devices (portrait phones, less than 576px)
