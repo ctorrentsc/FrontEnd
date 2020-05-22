@@ -216,6 +216,12 @@ aside {
   font-size: 10rem;
 }
 
+.user_login i:hover {
+  color: rgba(250, 157, 18, 0.8);
+  font-size: 12rem;
+  margin-top: -2rem; /* marge negatiu per fer efecte crescuda de l'icona */
+}
+
 .btn_login:hover {
   background-color: var(--blau-verd);
 }
