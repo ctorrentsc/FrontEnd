@@ -233,6 +233,10 @@ aside {
   height: 1.8rem;
 }
 
+.form_login input , .form_login select {
+  border: 1.5px solid rgb(245, 186, 77);
+}
+
 .form_login input:focus { 
   border-color: transparent;
   box-shadow: 0 0 0 0.2rem var(--blau-verd);/*canvia l'ombrejat blau per defecte, en posar el focus*/
