@@ -271,7 +271,7 @@ aside {
     font-size: 0.8rem;
   }
   .img-logo {
-    width: 35px;  /* img-fluid no responia en la imatge del logo, aplico mides segons dispositiu */
+    width: 48px;  /* img-fluid no responia en la imatge del logo, aplico mides segons dispositiu */
   }
   .img-escala {  /* imatges que tot i ser img-fluid en dispositius petits es veuen massa grans si ocupen el total del contenidor*/
     width: 250px;
@@ -303,7 +303,7 @@ aside {
 @media (min-width: 576px) { 
  
   .img-logo {
-    width: 45px;
+    width: 50px;
   }
 
   .img-escala {
