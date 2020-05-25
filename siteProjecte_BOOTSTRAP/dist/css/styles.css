@@ -82,7 +82,6 @@ a img:hover {
 }
 
 .pgf3 {
-  font-size: 1.4em;
   letter-spacing: 0.3em; 
   color:rgba(66, 66, 66, 0.85)
 }
@@ -311,6 +310,19 @@ aside {
     width: 280px;
   }
 
+  .pgf1 {
+    font-size: 1rem;
+  }
+
+  .pgf2 {
+    font-size: 1.3rem;
+  }
+
+  .pgf3 {
+    font-size: 1.5rem;
+    letter-spacing: 0;
+  }
+
 }
 
 /* md */
@@ -325,24 +337,35 @@ aside {
   }
 
   .pgf1 {
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
 
   .pgf2 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 
   .pgf3 {
-    font-size: 2rem;
-    letter-spacing: 0.2;
+    font-size: 1.4rem;
+    letter-spacing: 0.5rem;
   }
+
+
 }
 
 /* lg */
 @media (min-width: 992px) { 
 
+
+  .pgf1 {
+    font-size: 1.8rem;
+  }
+
+  .pgf2 {
+    font-size: 1.6rem;
+  }
   .pgf3 {
-    letter-spacing: 0.3;
+    font-size: 2.2rem;
+    letter-spacing: 1rem;
   }
  
 }
