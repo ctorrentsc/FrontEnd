@@ -26,7 +26,7 @@
     <div class="container-fluid px-0 text-principal"> <!-- Contenidor de tota la pàgina -->
       <header>
 
-        <div class="row mt-5"> <!-- contenidor logo + icones -->
+        <div class="row mt-5 mx-0"> <!-- contenidor logo + icones -->
           <div class="col-md-7">
             <div class="d-flex justify-content-center justify-content-md-end h1 mt-5 text-lowercase font-weight-bold">
                 <a href="index.html"><p class="display-4">byshei</p></a>
@@ -97,19 +97,19 @@
                           <li class="list-group-item border-0 bg-transparent py-4 hover_card">
                             <div class="d-flex align-items-center">
                               <img src="img/plat.png" alt="img vinyeta plat" class="img-escalaIcon">
-                              <p class="text-nowrap">Compartir les teves creacions</p>
+                              <p >Compartir les teves creacions</p>
                             </div>
                           </li>
                           <li class="list-group-item border-0 bg-transparent py-4 hover_card">
                             <div class="d-flex align-items-center">
                               <img src="img/tassa.png" alt="img vinyeta plat" class="img-escalaIcon">
-                              <p class="text-nowrap">Conèixer les vaixelles més trencadores</p>
+                              <p>Conèixer les vaixelles més trencadores</p>
                             </div>
                           </li>
                           <li class="list-group-item border-0 bg-transparent py-4 hover_card">
                             <div class="d-flex align-items-end">
                               <img src="img/bol.png" alt="img vinyeta plat" class="img-escalaIcon">
-                              <p class="text-nowrap">Rebre la Newsletter</p>
+                              <p>Rebre la Newsletter</p>
                             </div>
                           </li>
                         </ul>
@@ -166,7 +166,7 @@
                     <label for="password2">Repeteix la contrasenya</label>
                     <input type="password" class="form-control" id="password2" name="confirm_password" required placeholder="********"/>
                 </div>
-                <div class="d-flex countryFlex justify-content-start"> <!-- principi flexbox -->                       
+                <div class="d-flex flex-column flex-md-row countryFlex justify-content-start"> <!-- principi flexbox -->                       
                 <div class="form-group"> <!-- select pais -->
                     <label for="country" class="control-label">País</label>
                     <select class="form-control" id="country" name="user_country">
@@ -417,18 +417,18 @@
                     </select>                    
                 </div>  <!-- select pais -->
                 
-                <div class="form-group ml-5"> <!-- Zip Code-->
+                <div class="form-group ml-md-5"> <!-- Zip Code-->
                     <label for="codiPostal" class="control-label">Codi Postal</label>
                     <input type="text" class="form-control" id="codiPostal" name="user_cp">
                 </div> <!-- Zip Code-->
             </div> <!-- final flexbox -->   
             
-            <div class="d-flex countryFlex justify-content-start mb-5"> <!-- principi flexbox -->  
+            <div class="d-flex flex-column flex-md-row countryFlex justify-content-start mb-5"> <!-- principi flexbox -->  
                 <div class="form-group"> <!-- Municipi -->
                     <label for="municipi" class="control-label">Municipi</label>
                     <input type="text" class="form-control" id="municipi" name="user_city">
                 </div> <!-- Municipi -->                     
-                <div class="form-group ml-5"> <!-- select província -->
+                <div class="form-group ml-md-5"> <!-- select província -->
                     <label for="provincia" class="control-label">Província</label>
                     <select class="form-control" id="provincia" name="user_district">
                 <option value="selected" selected>_</option>
