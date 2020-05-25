@@ -278,11 +278,24 @@ aside {
     width: 250px;
   }
 
-  .pgf1 {   /* text overlay pàg index.html*/
+  .pgf1 {
+    font-size: 1rem;
+  }
+
+  .pgf2 {
+    font-size: 1.3rem;
+  }
+
+  .pgf3 {
     font-size: 1.5rem;
+    letter-spacing: 0;
   }
   .img_escala2 {
     width: 400px; /* icones grans pàg botig.html, en mida petita, evitem que quedi enorme */
+  }
+
+  .footer_special {
+    font-size: 1rem;
   }
 
  }
@@ -296,10 +309,6 @@ aside {
 
   .img-escala {
     width: 280px;
-  }
-
-  .pgf1 {
-    font-size: 1.7rem;
   }
 
 }
@@ -316,12 +325,25 @@ aside {
   }
 
   .pgf1 {
+    font-size: 1.6rem;
+  }
+
+  .pgf2 {
+    font-size: 1.8rem;
+  }
+
+  .pgf3 {
     font-size: 2rem;
+    letter-spacing: 0.2;
   }
 }
 
 /* lg */
 @media (min-width: 992px) { 
+
+  .pgf3 {
+    letter-spacing: 0.3;
+  }
  
 }
 
