@@ -29,7 +29,7 @@ var avisLegal = document.getElementById("defaultCheck2");
   avisLegal.addEventListener("click", verificarPolitica, true);
 
 
-function validateForm(){  //  -------- Comença la Funció que cridem des del Form onsubmit ---------
+function validateForm(){  //  --------------- Comença la Funció que cridem des del Form onsubmit ------------------------
   console.log("FUNCIONA"); // comprovo que el .js funciona en enviar el form
 
   let acumErrors = 0; // Comptador d'errors
@@ -82,7 +82,7 @@ function validateForm(){  //  -------- Comença la Funció que cridem des del Fo
   } else {
     return true;
   }
-}  // ACABA LA FUNCTION VALIDATE()
+}  // ------------------------------------------------------------- ACABA LA FUNCTION VALIDATE()
 
 
 
