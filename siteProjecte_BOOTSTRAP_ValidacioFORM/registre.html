@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="dist/css/styles.css" /> 
   </head>
                     
-  <body>
+  <body id="myDIV">
 
   <a class="sr-only" href="#main">Salta al contingut principal</a> <!-- Accés contingut per a lectors de pantalla -->
 
@@ -131,40 +131,43 @@
             <a href="#logo"><i class="fas fa-chevron-up"></i></a> <span class="sr-only">icona pujar pantalla</span>
         </div> <!-- icona pujar pantalla -->
 
-          
-            <form action="#" method="post" autocomplete="off" class="pt-5 mx-lg-5  mt-5 form_login"> <!-- form -->
+            <!-- form / posem onsubmit que cridi la funció x validar --> 
+            <form action="#" method="post" autocomplete="off" class="pt-5 mx-lg-5  mt-5 form_login" name="loginform" id="myForm" onsubmit="return validateForm()"> 
                 <p class="text-muted">* Camps obligatoris</p>
 
                 <div class="form-group mt-5"> 
-                    <label for="name" class="control-label "><span>&midast;</span>Nom</label>
-                    <input type="text" class="form-control" id="name" name="user_name" required>
+                    <label for="name_login" class="control-label "><span>&midast;</span>Nom</label>
+                    <input type="text" class="form-control" id="name_login" name="user_name_login">
+                    <small id="errorName_login" class="form-text text-muted"></small>
                 </div> 
             
                 <div class="form-group"> 
-                    <label for="surname" class="control-label"><span>&midast;</span>Cognoms</label>
-                    <input type="text" class="form-control" id="surname" name="user_surname" required>
+                    <label for="surname_login" class="control-label"><span>&midast;</span>Cognoms</label>
+                    <input type="text" class="form-control" id="surname_login" name="user_surname_login">
+                    <small id="errorSurname_login" class="form-text text-muted"></small>
                 </div>                    
                 
                 <div class="d-flex countryFlex2 flex-column flex-lg-row justify-content-start"> <!-- principi flexbox --> 
                 <div class="form-group"> 
-                    <label for="email" class="control-label"><span>&midast;</span>Correu electrònic</label>
-                    <input type="email" class="form-control" id="email" name="user_mail" required multiple title="Si hi ha més d'un correu, separeu-los amb una coma">
+                    <label for="email_login" class="control-label"><span>&midast;</span>Correu electrònic</label>
+                    <input type="text" class="form-control" id="email_login" name="user_mail_login"><small id="errorEmail_login" class="form-text text-muted"></small>
                 </div>    
             
                 <div class="form-group ml-lg-5"> 
-                    <label for="phoneNum" class="control-label"><span>&midast;</span>Telèfon</label>
-                    <input type="text" class="form-control" id="phoneNum" name="user_phone" maxlength="13" required title="Posar prefix internacional amb + Exemple: Spain +34"/>
+                    <label for="phoneNum" class="mb-0 mr-2"><span>&midast;</span>Telèfon</label><sup id="infoTel" class="text-danger">&phone;</sup>
+                    <input type="text" class="form-control" id="phoneNum" name="user_phone" title="No deixeu espais en blanc"/><small id="errorPhone_login" class="form-text text-muted"></small>
                 </div> 
                 </div>  <!-- final flexbox -->
 
                 <div class="form-group">
-                    <label for="password1">Contrasenya</label>
-                    <input type="password" class="form-control" id="password1" name="user_password" title="8 caràcters que incloguin lletres i números" required placeholder="********"/>
-                  </div>
+                    <label for="password1" class="mb-0 mr-2"><span>&midast;</span>Contrasenya</label><sup id="infoPsw" class="text-danger">&bigstar;</sup>
+                    <input type="password" class="form-control" id="password1" name="user_password" placeholder="********"/><small id="errorPassword1_login" class="form-text text-muted"></small>
+                </div>
 
                 <div class="form-group">
-                    <label for="password2">Repeteix la contrasenya</label>
-                    <input type="password" class="form-control" id="password2" name="confirm_password" required placeholder="********"/>
+                    <label for="password2"><span>&midast;</span>Repeteix la contrasenya</label>
+                    <input type="password" class="form-control" id="password2" name="confirm_password" placeholder="********"/>
+                    <small id="errorPassword2_login" class="form-text text-muted"></small>
                 </div>
                 <div class="d-flex flex-column flex-md-row countryFlex justify-content-start"> <!-- principi flexbox -->                       
                 <div class="form-group"> <!-- select pais -->
@@ -423,7 +426,7 @@
                 </div> <!-- Zip Code-->
             </div> <!-- final flexbox -->   
             
-            <div class="d-flex flex-column flex-md-row countryFlex justify-content-start mb-5"> <!-- principi flexbox -->  
+            <div class="d-flex flex-column flex-md-row countryFlex justify-content-start"> <!-- principi flexbox -->  
                 <div class="form-group"> <!-- Municipi -->
                     <label for="municipi" class="control-label">Municipi</label>
                     <input type="text" class="form-control" id="municipi" name="user_city">
@@ -431,16 +434,18 @@
                 <div class="form-group ml-md-5"> <!-- select província -->
                     <label for="provincia" class="control-label">Província</label>
                     <select class="form-control" id="provincia" name="user_district">
-                <option value="selected" selected>_</option>
-                <option value="Barcelona">Barcelona</option>
-                <option value="Tarragona">Tarragona</option>
-                <option value="Lleida">Lleida</option>
-                <option value="Girona">Girona</option>
-                
-                
+                        <option value="selected" selected>_</option>
+                        <option value="Barcelona">Barcelona</option>
+                        <option value="Tarragona">Tarragona</option>
+                        <option value="Lleida">Lleida</option>
+                        <option value="Girona">Girona</option>
                     </select>                    
                 </div>  <!-- select provincia -->
             </div> <!-- final flexbox --> 
+            <div class="form-group mb-5"> <!-- adreça -->
+              <label for="address" class="control-label ">Adreça</label>
+              <input type="text" class="form-control" id="address" name="user_address">
+            </div> <!-- adreça -->
 
             <div class="form-check">  <!--  2 chekbox -->
               <input class="form-check-input gh" type="checkbox" value="accept_newsletter" id="defaultCheck1">
@@ -449,9 +454,10 @@
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input gh" type="checkbox" value="" id="defaultCheck2" required>
+              <input class="form-check-input gh" type="checkbox" value="accept_policy" id="defaultCheck2">
+              <small id="errorCheck2_login" class="form-text text-muted"></small>
               <label class="form-check-label" for="defaultCheck2">
-                He llegit i accepto la <span>&midast;</span><a href="" data-toggle="modal" data-target="#staticBackdrop" ><u>política de privacitat</u></a>
+                He llegit i accepto la <span>&midast;</span><a href="" data-toggle="modal"  id="warning" data-target="#staticBackdrop" ><u>política de privacitat</u></a>
               </label>
               <!-- Modal -->
               <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -482,7 +488,7 @@
             </div>  <!--  2 chekbox -->
                 
                 <div class="form-group mt-5"> <!-- Submit Button -->
-                    <button type="submit" class="btn btn-secundari btn_login border-0 text-uppercase">Som-hi!</button>
+                    <button type="submit" class="btn btn-secundari btn_login border-0 text-uppercase" onclick="enviatOK()">Som-hi!</button>
                 </div>     
                 
             </form>  <!-- form -->
@@ -522,12 +528,11 @@
   
     </footer>   
     </div> <!-- fi Contenidor de tota la pàgina -->
-  
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="dist/js/bootstrap.min.js"></script>
-      <script src="dist/js/validate.js"></script>
+      <script src="dist/js/validateForm.js"></script>
     </body>
   </html>
