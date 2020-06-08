@@ -28,9 +28,11 @@ function validateNewsletter(){ // ------------ FUNCIÓ DE VALIDACIÓ que cridem 
     acumErrors++;
   }
 
-  if (acumErrors > 0){  // COMPTADOR D'ERRORS
+  if (acumErrors > 0){
+    alert("Hi ha camps que cal omplir/corregir")
     return false;
   } else {
+    alert("Les dades s'han enviat correctament");
     return true;
   }
 } // FINAL FUNCIÓ VALIDACIÓ
@@ -61,12 +63,4 @@ function validateNewsletter(){ // ------------ FUNCIÓ DE VALIDACIÓ que cridem 
         document.getElementById("errorEmail_nws").innerHTML = "Siusplau, comprova que el format del correu sigui correcte";
         return false;
       }
-  }
-
-  // Funció per a confirmar l'enviament 
-  function enviatOK(){
-    if(validateNewsletter() && verificarNom() && verificarMail()){
-      alert("Les dades s'han enviat correctament");
-    }
-    return true;
   }

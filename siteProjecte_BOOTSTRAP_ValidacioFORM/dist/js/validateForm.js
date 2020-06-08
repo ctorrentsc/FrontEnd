@@ -78,8 +78,10 @@ function validateForm(){  //  -------- Comença la Funció que cridem des del Fo
   }
 
   if (acumErrors > 0){
+    alert("Hi ha camps que cal omplir/corregir")
     return false;
   } else {
+    alert("Les dades s'han enviat correctament");
     return true;
   }
 }  // ACABA LA FUNCTION VALIDATE()
@@ -191,11 +193,3 @@ function verificarTel() {
     infoPsw.innerHTML = "&bigstar;";   
   }
 
-  // Funció per a confirmar l'enviament 
-
-  function enviatOK(){
-    if(validateForm() && verificarNom() && verificarCognom() && verificarMail() && verificarTel() && verificarPassw1() && verificarPassw2() && verificarPolitica()){
-      alert("Les dades s'han enviat correctament");
-    }
-    return true;
-  }
