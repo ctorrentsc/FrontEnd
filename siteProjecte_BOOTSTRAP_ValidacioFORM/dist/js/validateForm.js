@@ -88,7 +88,7 @@ function validateForm(){  //  -------- Comença la Funció que cridem des del Fo
 
 // ------------  EVENT HANDLER FUNCTIONS  -------------
 function verificarNom() {
-  if (username.value != "" && username.value > 3) {
+  if (username.value != "" && username.value >= 3) {
    username.style.border = "2px solid rgb(54, 159, 167)";
    document.getElementById("errorName_login").innerHTML = "";
    return true;

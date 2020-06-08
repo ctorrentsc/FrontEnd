@@ -38,7 +38,7 @@ function validateNewsletter(){ // ------------ FUNCIÓ DE VALIDACIÓ que cridem 
 // -------- FUNCIONS DE VERIFICACIÓ DE FORMAT PER A ADDEVENTLISTENER --------------
 
   function verificarNom() {
-    if (name_nws.value != "" && username.value > 3) {
+    if (name_nws.value != "" && username.value >= 3) {
       name_nws.style.border = "2px solid rgb(54, 159, 167)";
       document.getElementById("errorName_nws").innerHTML = "";
       return true;
