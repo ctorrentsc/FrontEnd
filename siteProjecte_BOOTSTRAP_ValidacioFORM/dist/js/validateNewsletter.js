@@ -10,7 +10,8 @@ var email_nws = document.getElementById("email_nws");
 name_nws.addEventListener("change", verificarNom, true); // EVENTS CHANGE QUE COMPROVEN EL FORMAT EN SORTIR DE L'INPUT
 email_nws.addEventListener("change", verificarMail, true);
 
-function validateNewsletter(){ // --------------------  FUNCIÓ DE VALIDACIÓ que cridem en fer submit  -----------------------
+
+function validateNewsletter(){ // ------------ FUNCIÓ DE VALIDACIÓ que cridem en fer submit --------------------
   console.log("FUNCIONA");  // comprovo que el .js funciona en enviar el form
 
   let acumErrors = 0;
@@ -34,17 +35,21 @@ function validateNewsletter(){ // --------------------  FUNCIÓ DE VALIDACIÓ qu
   }
 } // FINAL FUNCIÓ VALIDACIÓ
 
-// --------------- FUNCIONS DE VERIFICACIÓ DE FORMAT PER A ADDEVENTLISTENER --------------
+// -------- FUNCIONS DE VERIFICACIÓ DE FORMAT PER A ADDEVENTLISTENER --------------
 
-function verificarNom() {
-  if (name_nws.value != "") {
-   name_nws.style.border = "2px solid rgb(54, 159, 167)";
-   document.getElementById("errorName_nws").innerHTML = "";
-   return true;
+  function verificarNom() {
+    if (name_nws.value != "" && username.value > 3) {
+      name_nws.style.border = "2px solid rgb(54, 159, 167)";
+      document.getElementById("errorName_nws").innerHTML = "";
+      return true;
+      } else {
+        name_nws.style.border = "2px solid red";
+        document.getElementById("errorName_nws").innerHTML = "El nom ha de contenir un mínim de 3 caràcters";
+        return false;
+      }
   }
-}
 
-function verificarMail() {
+  function verificarMail() {
     let email_regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
       
     if (email_nws.value != "" && email_regex.test(email_nws.value)) {
@@ -58,7 +63,7 @@ function verificarMail() {
       }
   }
 
-    // Funció per a confirmar l'enviament 
+  // Funció per a confirmar l'enviament 
   function enviatOK(){
     if(validateNewsletter() && verificarNom() && verificarMail()){
       alert("Les dades s'han enviat correctament");

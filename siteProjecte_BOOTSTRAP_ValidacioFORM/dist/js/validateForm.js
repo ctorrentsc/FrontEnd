@@ -29,7 +29,7 @@ var avisLegal = document.getElementById("defaultCheck2");
   avisLegal.addEventListener("click", verificarPolitica, true);
 
 
-function validateForm(){  //  --------------- Comença la Funció que cridem des del Form onsubmit ------------------------
+function validateForm(){  //  -------- Comença la Funció que cridem des del Form onsubmit ---------
   console.log("FUNCIONA"); // comprovo que el .js funciona en enviar el form
 
   let acumErrors = 0; // Comptador d'errors
@@ -77,21 +77,25 @@ function validateForm(){  //  --------------- Comença la Funció que cridem des
     acumErrors++;
   }
 
-  if (acumErrors > 0){  // Enlloc de fer return false a cada if el fem en el sumatori d'errors
+  if (acumErrors > 0){
     return false;
   } else {
     return true;
   }
-}  // ------------------------------------------------------------- ACABA LA FUNCTION VALIDATE()
+}  // ACABA LA FUNCTION VALIDATE()
 
 
 
 // ------------  EVENT HANDLER FUNCTIONS  -------------
 function verificarNom() {
-  if (username.value != "") {
+  if (username.value != "" && username.value > 3) {
    username.style.border = "2px solid rgb(54, 159, 167)";
    document.getElementById("errorName_login").innerHTML = "";
    return true;
+  } else {
+    name_nws.style.border = "2px solid red";
+    document.getElementById("errorName_nws").innerHTML = "El nom ha de contenir un mínim de 3 caràcters";
+    return false;
   }
 }
 
