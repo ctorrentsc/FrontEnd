@@ -3,12 +3,16 @@
 // --------------------------------------------------  VALIDACIÓ NEWSLETTER  --------------------------------------------------------
 
 // Variables dels inputs
-var name_nws = document.getElementById("name_nws");
-var email_nws = document.getElementById("email_nws");
+var name_nws = document.forms["formNews"]["user_name_nws"];  //No posem .value ! Ho posem a les condicions.
+var email_nws = document.forms["formNews"]["user_email_nws"];
 
-// ADDEVENTLISTENERS que comproven el format introduit als inputs en sortir d'aquests
-name_nws.addEventListener("change", verificarNom, true); // EVENTS CHANGE QUE COMPROVEN EL FORMAT EN SORTIR DE L'INPUT
-email_nws.addEventListener("change", verificarMail, true);
+// Error display objects per on sortiran els missatges d'error
+var errorName_nws = document.getElementById("errorName_nws");
+var errorEmail_nws = document.getElementById("errorEmail_nws");
+
+// variable per a tot el form
+var formNews = document.getElementById("myFormNews");
+
 
 
 function validateNewsletter(){ // ------------ FUNCIÓ DE VALIDACIÓ que cridem en fer submit --------------------
@@ -17,15 +21,20 @@ function validateNewsletter(){ // ------------ FUNCIÓ DE VALIDACIÓ que cridem 
   let acumErrors = 0;
 
   if(name_nws.value == ""){ // VALIDEM SI EL CAMP ÉS BUIT
-    document.getElementById("errorName_nws").innerHTML = "Siusplau, ompliu el camp.";
-    name_nws.style.border = "2px solid red";
+    errorName_nws.innerHTML = "Siusplau, ompliu el camp.";
+    name_nws.classList.add("invalid");
     acumErrors++;
   }
 
   if(email_nws.value == ""){  // VALIDEM SI EL CAMP ÉS BUIT
-    document.getElementById("errorEmail_nws").innerHTML = "Siusplau, ompliu el camp.";
-    email_nws.style.border = "2px solid red";
+    errorEmail_nws.innerHTML = "Siusplau, ompliu el camp.";
+    email_nws.classList.add("invalid");
     acumErrors++;
+  } else if(!verificarMail(email_nws.value)){  // format invalid també si no es compleix la regex
+    errorEmail_nws.innerHTML = "L'adreça de correu no té el format correcte";
+    email_nws.classList.add("invalid");
+    acumErrors++;
+
   }
 
   if (acumErrors > 0){
@@ -35,32 +44,28 @@ function validateNewsletter(){ // ------------ FUNCIÓ DE VALIDACIÓ que cridem 
     alert("Les dades s'han enviat correctament");
     return true;
   }
-} // FINAL FUNCIÓ VALIDACIÓ
+} // ------------ Final FUNCIÓ DE VALIDACIÓ que cridem en fer submit --------------------
 
-// -------- FUNCIONS DE VERIFICACIÓ DE FORMAT PER A ADDEVENTLISTENER --------------
 
-  function verificarNom() {
-    if (name_nws.value != "" && username.value >= 3) {
-      name_nws.style.border = "2px solid rgb(54, 159, 167)";
-      document.getElementById("errorName_nws").innerHTML = "";
-      return true;
-      } else {
-        name_nws.style.border = "2px solid red";
-        document.getElementById("errorName_nws").innerHTML = "El nom ha de contenir un mínim de 3 caràcters";
-        return false;
+// AddEventListeners per a tot el form
+formNews.addEventListener('blur', campsOk, true); // true = capturing propagation: the outer most element's event is handled 
+                                                      // first and then the inner. 
+      function campsOk(){
+        if(event.target.value != ""){
+          event.target.classList.remove("invalid");
+          return true;
+        }
       }
-  }
+
+// Funció per a regex de mail
 
   function verificarMail() {
     let email_regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
       
-    if (email_nws.value != "" && email_regex.test(email_nws.value)) {
-      email_nws.style.border = "2px solid rgb(54, 159, 167)";
-      document.getElementById("errorEmail_nws").innerHTML = "";
+    if (email_regex.test(email_nws.value)) {
       return true;
       } else {
-        email_nws.style.border = "2px solid red";
-        document.getElementById("errorEmail_nws").innerHTML = "Siusplau, comprova que el format del correu sigui correcte";
-        return false;
+      return false;
       }
   }
+  

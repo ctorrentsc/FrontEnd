@@ -132,47 +132,47 @@
         </div> <!-- icona pujar pantalla -->
 
             <!-- form / posem onsubmit que cridi la funció x validar --> 
-            <form action="#" method="post" autocomplete="off" class="pt-5 mx-lg-5  mt-5 form_login" name="loginform" id="myForm" onsubmit="return validateForm()"> 
+            <form action="#" method="post" autocomplete="off" class="pt-5 mx-lg-5  mt-5 form_login" name="loginForm" id="myForm" onsubmit="return validateForm()"> 
                 <p class="text-muted">* Camps obligatoris</p>
 
                 <div class="form-group mt-5"> 
                     <label for="name_login" class="control-label "><span>&midast;</span>Nom</label>
-                    <input type="text" class="form-control" id="name_login" name="user_name_login">
+                    <input type="text" class="form-control borderOrange" id="name_login" name="user_name_login">
                     <small id="errorName_login" class="form-text text-muted"></small>
                 </div> 
             
                 <div class="form-group"> 
                     <label for="surname_login" class="control-label"><span>&midast;</span>Cognoms</label>
-                    <input type="text" class="form-control" id="surname_login" name="user_surname_login">
+                    <input type="text" class="form-control borderOrange" id="surname_login" name="user_surname_login">
                     <small id="errorSurname_login" class="form-text text-muted"></small>
                 </div>                    
                 
                 <div class="d-flex countryFlex2 flex-column flex-lg-row justify-content-start"> <!-- principi flexbox --> 
                 <div class="form-group"> 
                     <label for="email_login" class="control-label"><span>&midast;</span>Correu electrònic</label>
-                    <input type="text" class="form-control" id="email_login" name="user_mail_login"><small id="errorEmail_login" class="form-text text-muted"></small>
+                    <input type="text" class="form-control borderOrange" id="email_login" name="user_mail_login"><small id="errorEmail_login" class="form-text text-muted"></small>
                 </div>    
             
                 <div class="form-group ml-lg-5"> 
                     <label for="phoneNum" class="mb-0 mr-2"><span>&midast;</span>Telèfon</label><sup id="infoTel" class="text-danger">&phone;</sup>
-                    <input type="text" class="form-control" id="phoneNum" name="user_phone" title="No deixeu espais en blanc"/><small id="errorPhone_login" class="form-text text-muted"></small>
+                    <input type="text" class="form-control borderOrange" id="phoneNum" name="user_phone" title="No deixeu espais en blanc"/><small id="errorPhone_login" class="form-text text-muted"></small>
                 </div> 
                 </div>  <!-- final flexbox -->
 
                 <div class="form-group">
                     <label for="password1" class="mb-0 mr-2"><span>&midast;</span>Contrasenya</label><sup id="infoPsw" class="text-danger">&bigstar;</sup>
-                    <input type="password" class="form-control" id="password1" name="user_password" placeholder="********"/><small id="errorPassword1_login" class="form-text text-muted"></small>
+                    <input type="password" class="form-control borderOrange" id="password1" name="user_password" placeholder="********"/><small id="errorPassword1_login" class="form-text text-muted"></small>
                 </div>
 
                 <div class="form-group">
                     <label for="password2"><span>&midast;</span>Repeteix la contrasenya</label>
-                    <input type="password" class="form-control" id="password2" name="confirm_password" placeholder="********"/>
+                    <input type="password" class="form-control borderOrange" id="password2" name="confirm_password" placeholder="********"/>
                     <small id="errorPassword2_login" class="form-text text-muted"></small>
                 </div>
                 <div class="d-flex flex-column flex-md-row countryFlex justify-content-start"> <!-- principi flexbox -->                       
                 <div class="form-group"> <!-- select pais -->
                     <label for="country" class="control-label">País</label>
-                    <select class="form-control" id="country" name="user_country">
+                    <select class="form-control borderOrange" id="country" name="user_country">
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>
@@ -422,18 +422,18 @@
                 
                 <div class="form-group ml-md-5"> <!-- Zip Code-->
                     <label for="codiPostal" class="control-label">Codi Postal</label>
-                    <input type="text" class="form-control" id="codiPostal" name="user_cp">
+                    <input type="text" class="form-control borderOrange" id="codiPostal" name="user_cp">
                 </div> <!-- Zip Code-->
             </div> <!-- final flexbox -->   
             
             <div class="d-flex flex-column flex-md-row countryFlex justify-content-start"> <!-- principi flexbox -->  
                 <div class="form-group"> <!-- Municipi -->
                     <label for="municipi" class="control-label">Municipi</label>
-                    <input type="text" class="form-control" id="municipi" name="user_city">
+                    <input type="text" class="form-control borderOrange" id="municipi" name="user_city">
                 </div> <!-- Municipi -->                     
                 <div class="form-group ml-md-5"> <!-- select província -->
                     <label for="provincia" class="control-label">Província</label>
-                    <select class="form-control" id="provincia" name="user_district">
+                    <select class="form-control borderOrange" id="provincia" name="user_district">
                         <option value="selected" selected>_</option>
                         <option value="Barcelona">Barcelona</option>
                         <option value="Tarragona">Tarragona</option>
@@ -444,7 +444,7 @@
             </div> <!-- final flexbox --> 
             <div class="form-group mb-5"> <!-- adreça -->
               <label for="address" class="control-label ">Adreça</label>
-              <input type="text" class="form-control" id="address" name="user_address">
+              <input type="text" class="form-control borderOrange" id="address" name="user_address">
             </div> <!-- adreça -->
 
             <div class="form-check">  <!--  2 chekbox -->
@@ -454,10 +454,10 @@
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input gh" type="checkbox" value="accept_policy" id="defaultCheck2">
+              <input class="form-check-input gh" type="checkbox" value="accept_policy" id="defaultCheck2" name="user_legacy">
               <small id="errorCheck2_login" class="form-text text-muted"></small>
               <label class="form-check-label" for="defaultCheck2">
-                He llegit i accepto la <span>&midast;</span><a href="" data-toggle="modal"  id="warning" data-target="#staticBackdrop" ><u>política de privacitat</u></a>
+                He llegit i accepto la <span>&midast;</span><a href="" data-toggle="modal" data-target="#staticBackdrop" ><u id="warning">política de privacitat</u></a>
               </label>
               <!-- Modal -->
               <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">

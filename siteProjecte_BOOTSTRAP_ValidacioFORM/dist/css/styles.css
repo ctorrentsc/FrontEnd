@@ -80,6 +80,16 @@ a img:hover {
   margin-top: -5rem;
 }
 
+/* Validacions de formulari */
+
+.invalid {
+  border: 2px solid red;
+}
+
+.invalid_check {
+  color: red;
+}
+
 /* -------------------------------- index.html ------------------------------------- */
 
 /* Estil paràgrafs text overlay */
@@ -253,7 +263,7 @@ aside {
   outline: none;
 } 
 
-.form_login input , .form_login select {
+.borderOrange {
   border: 1.5px solid rgb(245, 186, 77);
 }
 
