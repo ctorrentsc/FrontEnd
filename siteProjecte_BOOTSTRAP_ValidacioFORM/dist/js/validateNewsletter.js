@@ -15,7 +15,7 @@ function validateNewsletter(){ // ------------ FUNCIÓ DE VALIDACIÓ que cridem 
   console.log("FUNCIONA");  // comprovo que el .js funciona en enviar el form
 
   // variable per a tot el form
-  var formNews = document.getElementById("myFormNews"); 
+  var formNews = document.getElementById("myFormNews");
   let acumErrors = 0;
 
   if(name_nws.value == ""){ // VALIDEM SI EL CAMP ÉS BUIT
@@ -46,7 +46,8 @@ function validateNewsletter(){ // ------------ FUNCIÓ DE VALIDACIÓ que cridem 
 
 
 // AddEventListeners per a tot el form
-formNews.addEventListener('blur', campsOk, true); // true = capturing propagation: the outer most element's event is handled 
+if(formNews){
+  formNews.addEventListener('blur', campsOk, true); // true = capturing propagation: the outer most element's event is handled 
                                                       // first and then the inner. 
       function campsOk(){
         if(event.target.value != ""){
@@ -54,6 +55,7 @@ formNews.addEventListener('blur', campsOk, true); // true = capturing propagatio
           return true;
         }
       }
+  } 
 
 // Funció per a regex de mail
 

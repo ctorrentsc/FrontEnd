@@ -22,7 +22,6 @@ var errorCheck2_login = document.getElementById("errorCheck2_login");
 
 // variable per a tot el form
 var formLogin = document.getElementById("myForm");
-
   
 
 function validateForm(){  //  -------- Comença la Funció que cridem des del Form onsubmit ---------
@@ -107,7 +106,8 @@ function validateForm(){  //  -------- Comença la Funció que cridem des del Fo
 
 // AddEventListeners per a tot al form i per al checkbox en concret.
 
-formLogin.addEventListener('blur', campsOk, true); // true = capturing propagation: the outer most element's event is handled 
+if(formLogin){
+  formLogin.addEventListener('blur', campsOk, true); // true = capturing propagation: the outer most element's event is handled 
                                                       // first and then the inner. 
       function campsOk(){
         if(event.target.value != ""){
@@ -118,7 +118,7 @@ formLogin.addEventListener('blur', campsOk, true); // true = capturing propagati
       }
 
 
-avisLegal.addEventListener("blur", policyOk, true); // Amb aquest event traiem la class invalid de les paraules "política de privacitat"
+  avisLegal.addEventListener("blur", policyOk, true); // Amb aquest event traiem la class invalid de les paraules "política de privacitat"
                                                     // A dif de la resta d'inputs, en aquest no traiem la class invalid al event.target, és a dir, a l'element q dispara el event que seria el checkbox.
       function policyOk(){
         if(avisLegal.checked){
@@ -126,6 +126,7 @@ avisLegal.addEventListener("blur", policyOk, true); // Amb aquest event traiem l
           return true;
         }
       }
+    }
 
 
 // Funcions regex mail, tf i password
