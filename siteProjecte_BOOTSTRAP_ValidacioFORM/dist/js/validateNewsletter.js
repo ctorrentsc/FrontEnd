@@ -10,12 +10,12 @@ var email_nws = document.forms["formNews"]["user_email_nws"];
 var errorName_nws = document.getElementById("errorName_nws");
 var errorEmail_nws = document.getElementById("errorEmail_nws");
 
+// variable per a tot el form
+var formNews = document.getElementById("myFormNews");
 
 function validateNewsletter(){ // ------------ FUNCIÓ DE VALIDACIÓ que cridem en fer submit --------------------
   console.log("FUNCIONA");  // comprovo que el .js funciona en enviar el form
 
-  // variable per a tot el form
-  var formNews = document.getElementById("myFormNews");
   let acumErrors = 0;
 
   if(name_nws.value == ""){ // VALIDEM SI EL CAMP ÉS BUIT
@@ -69,3 +69,8 @@ if(formNews){
       }
   }
   
+function enblanc(){
+  if(formNews){
+    formNews.reset();
+  }
+}
